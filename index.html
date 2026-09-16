@@ -1,111 +1,769 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News Demo - Trang mô phỏng</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
-        }
+<title>NEWS LAB - Tin tức mỗi ngày</title>
 
-        .warning {
-            background: #fff3cd;
-            color: #856404;
-            text-align: center;
-            padding: 12px;
-            font-weight: bold;
-        }
+<style>
 
-        header {
-            background: #c40000;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        nav {
-            background: white;
-            padding: 12px;
-            text-align: center;
-            border-bottom: 1px solid #ddd;
-        }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+}
 
-        nav a {
-            margin: 0 15px;
-            color: #333;
-            text-decoration: none;
-        }
+/* ================= HEADER ================= */
 
-        .container {
-            max-width: 1000px;
-            margin: 30px auto;
-            background: white;
-            padding: 25px;
-        }
+.top-header {
+    background: #b40000;
+    color: white;
+}
 
-        article {
-            border-bottom: 1px solid #ddd;
-            padding: 20px 0;
-        }
+.header {
+    max-width: 1200px;
+    margin: auto;
+    height: 80px;
 
-        article h2 {
-            margin-bottom: 10px;
-        }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: #777;
-        }
-    </style>
+.logo {
+    font-size: 34px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    font-size: 13px;
+    display: block;
+    font-weight: normal;
+}
+
+/* ================= SEARCH ================= */
+
+.search-box {
+    display: flex;
+}
+
+.search-box input {
+    width: 230px;
+    padding: 11px;
+    border: none;
+    outline: none;
+}
+
+.search-box button {
+    padding: 11px 15px;
+    border: none;
+    background: #222;
+    color: white;
+    cursor: pointer;
+}
+
+/* ================= MENU ================= */
+
+.menu {
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu ul {
+    max-width: 1200px;
+    margin: auto;
+
+    list-style: none;
+
+    display: flex;
+    overflow-x: auto;
+}
+
+.menu li {
+    padding: 15px 18px;
+    cursor: pointer;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.menu li:hover {
+    color: #b40000;
+}
+
+/* ================= WARNING ================= */
+
+.warning {
+    max-width: 1200px;
+    margin: 15px auto;
+
+    padding: 12px;
+
+    background: #fff3cd;
+    border: 1px solid #ffe69c;
+
+    color: #664d03;
+    text-align: center;
+}
+
+/* ================= MAIN ================= */
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-title {
+    border-left: 5px solid #b40000;
+    padding-left: 10px;
+
+    margin: 25px 0 15px;
+
+    font-size: 24px;
+}
+
+/* ================= NEWS GRID ================= */
+
+.news-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.article {
+    background: white;
+
+    border-radius: 5px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 2px 8px rgba(0,0,0,0.08);
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.article:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.15);
+}
+
+.article img {
+    width: 100%;
+    height: 190px;
+
+    object-fit: cover;
+}
+
+.article-content {
+    padding: 15px;
+}
+
+.category {
+    color: #b40000;
+    font-size: 13px;
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+.article h2 {
+    font-size: 20px;
+    line-height: 1.3;
+
+    margin-bottom: 8px;
+}
+
+.article p {
+    color: #666;
+
+    line-height: 1.5;
+}
+
+/* ================= ARTICLE DETAIL ================= */
+
+#detail {
+    display: none;
+
+    background: white;
+
+    padding: 30px;
+
+    margin-top: 25px;
+}
+
+#detail h1 {
+    font-size: 34px;
+    line-height: 1.3;
+
+    margin-bottom: 15px;
+}
+
+.detail-meta {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+#detail img {
+    width: 100%;
+    max-height: 500px;
+
+    object-fit: cover;
+
+    margin-bottom: 20px;
+}
+
+.detail-text {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.back-button {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 10px 18px;
+
+    background: #b40000;
+    color: white;
+
+    cursor: pointer;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    margin-top: 50px;
+
+    background: #222;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+footer p {
+    margin: 6px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width: 900px) {
+
+    .header {
+        padding: 0 15px;
+    }
+
+    .news-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+@media(max-width: 600px) {
+
+    .header {
+        height: auto;
+
+        padding: 15px;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .search-box input {
+        width: 200px;
+    }
+
+    .container {
+        padding: 0 12px;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #detail {
+        padding: 20px;
+    }
+
+    #detail h1 {
+        font-size: 27px;
+    }
+
+}
+
+</style>
 </head>
+
 
 <body>
 
-<div class="warning">
-    ⚠️ WEBSITE MÔ PHỎNG PHỤC VỤ HỌC TẬP — KHÔNG PHẢI WEBSITE CHÍNH THỨC
+<!-- ================= HEADER ================= -->
+
+<header class="top-header">
+
+<div class="header">
+
+<div class="logo">
+
+NEWS LAB
+
+<span>TRANG TIN TỨC MÔ PHỎNG</span>
+
 </div>
 
-<header>
-    <h1>NEWS DEMO</h1>
-    <p>Trang mô phỏng báo điện tử</p>
+
+<div class="search-box">
+
+<input
+id="searchInput"
+type="text"
+placeholder="Tìm kiếm tin tức..."
+>
+
+<button onclick="searchNews()">
+Tìm
+</button>
+
+</div>
+
+</div>
+
 </header>
 
-<nav>
-    <a href="#">Trang chủ</a>
-    <a href="#">Thời sự</a>
-    <a href="#">Công nghệ</a>
-    <a href="#">Kinh tế</a>
-    <a href="#">Thể thao</a>
+
+<!-- ================= MENU ================= -->
+
+<nav class="menu">
+
+<ul>
+
+<li onclick="showHome()">Trang chủ</li>
+
+<li onclick="filterNews('Thời sự')">
+Thời sự
+</li>
+
+<li onclick="filterNews('Kinh tế')">
+Kinh tế
+</li>
+
+<li onclick="filterNews('Công nghệ')">
+Công nghệ
+</li>
+
+<li onclick="filterNews('Thể thao')">
+Thể thao
+</li>
+
+<li onclick="filterNews('Đời sống')">
+Đời sống
+</li>
+
+</ul>
+
 </nav>
 
-<div class="container">
 
-    <article>
-        <h2>Đây là bài viết mô phỏng số 1</h2>
-        <p>
-            Nội dung này được tạo ra nhằm phục vụ bài thực hành
-            về nhận diện website giả mạo.
-        </p>
-    </article>
+<!-- ================= WARNING ================= -->
 
-    <article>
-        <h2>Đây là bài viết mô phỏng số 2</h2>
-        <p>
-            Website không thu thập tài khoản, mật khẩu hoặc
-            thông tin cá nhân của người truy cập.
-        </p>
-    </article>
+<div class="warning">
+
+⚠️ <b>WEBSITE MÔ PHỎNG PHỤC VỤ HỌC TẬP</b>
+
+<br>
+
+Đây là sản phẩm thực hành xây dựng giao diện báo điện tử,
+không phải website chính thức của bất kỳ cơ quan báo chí nào.
 
 </div>
 
+
+<!-- ================= MAIN ================= -->
+
+<main class="container">
+
+
+<section id="home">
+
+<h1 class="section-title">
+Tin tức mới nhất
+</h1>
+
+
+<div
+id="newsGrid"
+class="news-grid">
+</div>
+
+</section>
+
+
+<!-- ================= DETAIL ================= -->
+
+<section id="detail">
+
+<h1 id="detailTitle"></h1>
+
+<div
+id="detailMeta"
+class="detail-meta">
+</div>
+
+<img
+id="detailImage"
+src=""
+alt="Ảnh bài viết"
+>
+
+<div
+id="detailText"
+class="detail-text">
+</div>
+
+<div
+class="back-button"
+onclick="showHome()">
+
+← Quay lại trang chủ
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
 <footer>
-    © 2026 News Demo — Educational Project
+
+<p>
+<b>NEWS LAB</b>
+</p>
+
+<p>
+Website mô phỏng phục vụ học tập
+</p>
+
+<p>
+Không thu thập mật khẩu hoặc thông tin đăng nhập.
+</p>
+
 </footer>
+
+
+<script>
+
+/* ================= DATA ================= */
+
+const news = [
+
+{
+    title:
+    "Ứng dụng công nghệ đang thay đổi cuộc sống như thế nào?",
+
+    category:
+    "Công nghệ",
+
+    image:
+    "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80",
+
+    description:
+    "Công nghệ số đang tạo ra nhiều thay đổi trong học tập, công việc và đời sống.",
+
+    content:
+    "Sự phát triển của công nghệ đang tạo ra nhiều thay đổi trong cuộc sống hiện đại. Internet, trí tuệ nhân tạo và các nền tảng số giúp con người tiếp cận thông tin nhanh hơn."
+},
+
+{
+    title:
+    "Những xu hướng kinh tế đáng chú ý trong thời gian tới",
+
+    category:
+    "Kinh tế",
+
+    image:
+    "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=900&q=80",
+
+    description:
+    "Nhiều lĩnh vực kinh tế đang thay đổi nhanh chóng dưới tác động của công nghệ.",
+
+    content:
+    "Kinh tế số đang trở thành một trong những lĩnh vực được quan tâm. Doanh nghiệp ngày càng sử dụng dữ liệu và công nghệ để cải thiện hoạt động."
+},
+
+{
+    title:
+    "Các hoạt động thể thao thu hút sự quan tâm của giới trẻ",
+
+    category:
+    "Thể thao",
+
+    image:
+    "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=900&q=80",
+
+    description:
+    "Thể thao ngày càng trở thành một phần quan trọng trong đời sống của giới trẻ.",
+
+    content:
+    "Các hoạt động thể thao giúp nâng cao sức khỏe và tạo cơ hội giao lưu. Nhiều môn thể thao đang được giới trẻ quan tâm và tham gia."
+},
+
+{
+    title:
+    "Những thay đổi trong đời sống đô thị hiện đại",
+
+    category:
+    "Đời sống",
+
+    image:
+    "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=900&q=80",
+
+    description:
+    "Đô thị hiện đại đang thay đổi nhanh chóng cùng với sự phát triển của công nghệ.",
+
+    content:
+    "Các thành phố đang áp dụng nhiều giải pháp công nghệ nhằm cải thiện giao thông, môi trường và chất lượng cuộc sống của người dân."
+},
+
+{
+    title:
+    "Nâng cao kỹ năng số cho sinh viên",
+
+    category:
+    "Thời sự",
+
+    image:
+    "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80",
+
+    description:
+    "Kỹ năng số ngày càng trở thành một phần quan trọng trong quá trình học tập.",
+
+    content:
+    "Sinh viên có thể sử dụng nhiều công cụ kỹ thuật số để hỗ trợ học tập và nghiên cứu. Việc hiểu cách sử dụng công nghệ an toàn cũng rất quan trọng."
+},
+
+{
+    title:
+    "Trí tuệ nhân tạo mở ra nhiều hướng nghiên cứu mới",
+
+    category:
+    "Công nghệ",
+
+    image:
+    "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80",
+
+    description:
+    "AI đang được nghiên cứu và ứng dụng trong nhiều lĩnh vực.",
+
+    content:
+    "Trí tuệ nhân tạo đang được ứng dụng trong giáo dục, y tế, sản xuất và nhiều lĩnh vực khác. Các công nghệ mới tiếp tục được nghiên cứu và phát triển."
+}
+
+];
+
+
+/* ================= DISPLAY NEWS ================= */
+
+function displayNews(data) {
+
+const grid =
+document.getElementById("newsGrid");
+
+grid.innerHTML = "";
+
+
+if(data.length === 0) {
+
+grid.innerHTML =
+"<p>Không tìm thấy bài viết phù hợp.</p>";
+
+return;
+
+}
+
+
+data.forEach((article, index) => {
+
+const div =
+document.createElement("div");
+
+div.className = "article";
+
+
+div.onclick =
+function() {
+
+openArticle(index, data);
+
+};
+
+
+div.innerHTML = `
+
+<img
+src="${article.image}"
+alt="${article.title}"
+>
+
+<div class="article-content">
+
+<div class="category">
+${article.category}
+</div>
+
+<h2>
+${article.title}
+</h2>
+
+<p>
+${article.description}
+</p>
+
+</div>
+
+`;
+
+grid.appendChild(div);
+
+});
+
+}
+
+
+/* ================= OPEN ARTICLE ================= */
+
+function openArticle(index, data) {
+
+const article = data[index];
+
+document.getElementById("home")
+.style.display = "none";
+
+document.getElementById("detail")
+.style.display = "block";
+
+
+document.getElementById("detailTitle")
+.innerText =
+article.title;
+
+
+document.getElementById("detailMeta")
+.innerText =
+article.category +
+" | NEWS LAB";
+
+
+document.getElementById("detailImage")
+.src =
+article.image;
+
+
+document.getElementById("detailText")
+.innerText =
+article.content;
+
+}
+
+
+/* ================= HOME ================= */
+
+function showHome() {
+
+document.getElementById("home")
+.style.display = "block";
+
+document.getElementById("detail")
+.style.display = "none";
+
+}
+
+
+/* ================= CATEGORY ================= */
+
+function filterNews(category) {
+
+const result =
+news.filter(
+article =>
+article.category === category
+);
+
+showHome();
+
+displayNews(result);
+
+}
+
+
+/* ================= SEARCH ================= */
+
+function searchNews() {
+
+const keyword =
+document.getElementById("searchInput")
+.value
+.toLowerCase()
+.trim();
+
+
+if(keyword === "") {
+
+displayNews(news);
+
+return;
+
+}
+
+
+const result =
+news.filter(article =>
+
+article.title
+.toLowerCase()
+.includes(keyword)
+
+||
+article.description
+.toLowerCase()
+.includes(keyword)
+
+);
+
+
+displayNews(result);
+
+}
+
+
+/* ================= INITIAL ================= */
+
+displayNews(news);
+
+</script>
 
 </body>
 </html>
