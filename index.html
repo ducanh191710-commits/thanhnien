@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NEWS LAB - Tin tức mỗi ngày</title>
+<title>THANH NIÊN LAB - Tin tức mỗi ngày</title>
 
 <style>
+
+/* ================= RESET ================= */
 
 * {
     box-sizing: border-box;
@@ -19,6 +22,7 @@ body {
     background: #f5f5f5;
     color: #222;
 }
+
 
 /* ================= HEADER ================= */
 
@@ -47,7 +51,9 @@ body {
     font-size: 13px;
     display: block;
     font-weight: normal;
+    margin-top: 3px;
 }
+
 
 /* ================= SEARCH ================= */
 
@@ -58,17 +64,29 @@ body {
 .search-box input {
     width: 230px;
     padding: 11px;
+
     border: none;
     outline: none;
+
+    font-size: 14px;
 }
 
 .search-box button {
-    padding: 11px 15px;
+    padding: 11px 18px;
+
     border: none;
+
     background: #222;
     color: white;
+
     cursor: pointer;
+    font-weight: bold;
 }
+
+.search-box button:hover {
+    background: #444;
+}
+
 
 /* ================= MENU ================= */
 
@@ -89,7 +107,9 @@ body {
 
 .menu li {
     padding: 15px 18px;
+
     cursor: pointer;
+
     font-weight: bold;
     white-space: nowrap;
 }
@@ -98,20 +118,25 @@ body {
     color: #b40000;
 }
 
-/* ================= WARNING ================= */
+
+/* ================= LAB NOTICE ================= */
 
 .warning {
     max-width: 1200px;
     margin: 15px auto;
 
-    padding: 12px;
+    padding: 10px 12px;
 
     background: #fff3cd;
     border: 1px solid #ffe69c;
 
     color: #664d03;
+
     text-align: center;
+
+    font-size: 14px;
 }
+
 
 /* ================= MAIN ================= */
 
@@ -122,12 +147,14 @@ body {
 
 .section-title {
     border-left: 5px solid #b40000;
+
     padding-left: 10px;
 
     margin: 25px 0 15px;
 
     font-size: 24px;
 }
+
 
 /* ================= NEWS GRID ================= */
 
@@ -167,6 +194,8 @@ body {
     height: 190px;
 
     object-fit: cover;
+
+    display: block;
 }
 
 .article-content {
@@ -175,7 +204,9 @@ body {
 
 .category {
     color: #b40000;
+
     font-size: 13px;
+
     font-weight: bold;
 
     margin-bottom: 8px;
@@ -183,6 +214,7 @@ body {
 
 .article h2 {
     font-size: 20px;
+
     line-height: 1.3;
 
     margin-bottom: 8px;
@@ -193,6 +225,7 @@ body {
 
     line-height: 1.5;
 }
+
 
 /* ================= ARTICLE DETAIL ================= */
 
@@ -208,6 +241,7 @@ body {
 
 #detail h1 {
     font-size: 34px;
+
     line-height: 1.3;
 
     margin-bottom: 15px;
@@ -215,11 +249,13 @@ body {
 
 .detail-meta {
     color: #777;
+
     margin-bottom: 20px;
 }
 
 #detail img {
     width: 100%;
+
     max-height: 500px;
 
     object-fit: cover;
@@ -229,6 +265,7 @@ body {
 
 .detail-text {
     font-size: 18px;
+
     line-height: 1.8;
 }
 
@@ -240,10 +277,18 @@ body {
     padding: 10px 18px;
 
     background: #b40000;
+
     color: white;
 
     cursor: pointer;
+
+    border-radius: 3px;
 }
+
+.back-button:hover {
+    background: #8f0000;
+}
+
 
 /* ================= FOOTER ================= */
 
@@ -263,6 +308,7 @@ footer p {
     margin: 6px;
 }
 
+
 /* ================= RESPONSIVE ================= */
 
 @media(max-width: 900px) {
@@ -278,6 +324,7 @@ footer p {
 
 }
 
+
 @media(max-width: 600px) {
 
     .header {
@@ -288,6 +335,10 @@ footer p {
         flex-direction: column;
 
         gap: 15px;
+    }
+
+    .logo {
+        text-align: center;
     }
 
     .search-box input {
@@ -313,88 +364,94 @@ footer p {
 }
 
 </style>
+
 </head>
 
 
 <body>
 
+
 <!-- ================= HEADER ================= -->
 
 <header class="top-header">
 
-<div class="header">
+    <div class="header">
 
-<div class="logo">
+        <div class="logo">
 
-NEWS LAB
+            THANH NIÊN LAB
 
-<span>TRANG TIN TỨC MÔ PHỎNG</span>
+            <span>
+                TIN TỨC MỖI NGÀY
+            </span>
 
-</div>
+        </div>
 
 
-<div class="search-box">
+        <div class="search-box">
 
-<input
-id="searchInput"
-type="text"
-placeholder="Tìm kiếm tin tức..."
->
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="Tìm kiếm tin tức..."
+            >
 
-<button onclick="searchNews()">
-Tìm
-</button>
+            <button onclick="searchNews()">
+                Tìm
+            </button>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </header>
+
 
 
 <!-- ================= MENU ================= -->
 
 <nav class="menu">
 
-<ul>
+    <ul>
 
-<li onclick="showHome()">Trang chủ</li>
+        <li onclick="showHome()">
+            Trang chủ
+        </li>
 
-<li onclick="filterNews('Thời sự')">
-Thời sự
-</li>
+        <li onclick="filterNews('Thời sự')">
+            Thời sự
+        </li>
 
-<li onclick="filterNews('Kinh tế')">
-Kinh tế
-</li>
+        <li onclick="filterNews('Kinh tế')">
+            Kinh tế
+        </li>
 
-<li onclick="filterNews('Công nghệ')">
-Công nghệ
-</li>
+        <li onclick="filterNews('Công nghệ')">
+            Công nghệ
+        </li>
 
-<li onclick="filterNews('Thể thao')">
-Thể thao
-</li>
+        <li onclick="filterNews('Thể thao')">
+            Thể thao
+        </li>
 
-<li onclick="filterNews('Đời sống')">
-Đời sống
-</li>
+        <li onclick="filterNews('Đời sống')">
+            Đời sống
+        </li>
 
-</ul>
+    </ul>
 
 </nav>
 
 
-<!-- ================= WARNING ================= -->
+
+<!-- ================= LAB NOTICE ================= -->
 
 <div class="warning">
 
-⚠️ <b>WEBSITE MÔ PHỎNG PHỤC VỤ HỌC TẬP</b>
-
-<br>
-
+    ⚠️ <b>THANH NIÊN LAB — MÔ PHỎNG</b>
 
 </div>
+
 
 
 <!-- ================= MAIN ================= -->
@@ -402,366 +459,416 @@ Thể thao
 <main class="container">
 
 
-<section id="home">
+    <!-- ================= HOME ================= -->
 
-<h1 class="section-title">
-Tin tức mới nhất
-</h1>
+    <section id="home">
 
-
-<div
-id="newsGrid"
-class="news-grid">
-</div>
-
-</section>
+        <h1 class="section-title">
+            Tin tức mới nhất
+        </h1>
 
 
-<!-- ================= DETAIL ================= -->
+        <div
+            id="newsGrid"
+            class="news-grid">
+        </div>
 
-<section id="detail">
+    </section>
 
-<h1 id="detailTitle"></h1>
 
-<div
-id="detailMeta"
-class="detail-meta">
-</div>
 
-<img
-id="detailImage"
-src=""
-alt="Ảnh bài viết"
->
+    <!-- ================= DETAIL ================= -->
 
-<div
-id="detailText"
-class="detail-text">
-</div>
+    <section id="detail">
 
-<div
-class="back-button"
-onclick="showHome()">
+        <h1 id="detailTitle"></h1>
 
-← Quay lại trang chủ
 
-</div>
+        <div
+            id="detailMeta"
+            class="detail-meta">
+        </div>
 
-</section>
+
+        <img
+            id="detailImage"
+            src=""
+            alt="Ảnh bài viết"
+        >
+
+
+        <div
+            id="detailText"
+            class="detail-text">
+        </div>
+
+
+        <div
+            class="back-button"
+            onclick="showHome()">
+
+            ← Quay lại trang chủ
+
+        </div>
+
+    </section>
 
 
 </main>
+
 
 
 <!-- ================= FOOTER ================= -->
 
 <footer>
 
-<p>
-<b>NEWS LAB</b>
-</p>
+    <p>
+        <b>THANH NIÊN LAB</b>
+    </p>
 
-<p>
-Website mô phỏng phục vụ học tập
-</p>
+    <p>
+        Môi trường mô phỏng phục vụ thực hành web.
+    </p>
 
-<p>
-Không thu thập mật khẩu hoặc thông tin đăng nhập.
-</p>
+    <p>
+        Không thu thập mật khẩu hoặc thông tin đăng nhập.
+    </p>
 
 </footer>
 
 
+
 <script>
+
 
 /* ================= DATA ================= */
 
 const news = [
 
-{
-    title:
-    "Ứng dụng công nghệ đang thay đổi cuộc sống như thế nào?",
+    {
+        title:
+        "Ứng dụng công nghệ đang thay đổi cuộc sống như thế nào?",
 
-    category:
-    "Công nghệ",
+        category:
+        "Công nghệ",
 
-    image:
-    "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80",
+        image:
+        "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80",
 
-    description:
-    "Công nghệ số đang tạo ra nhiều thay đổi trong học tập, công việc và đời sống.",
+        description:
+        "Công nghệ số đang tạo ra nhiều thay đổi trong học tập, công việc và đời sống.",
 
-    content:
-    "Sự phát triển của công nghệ đang tạo ra nhiều thay đổi trong cuộc sống hiện đại. Internet, trí tuệ nhân tạo và các nền tảng số giúp con người tiếp cận thông tin nhanh hơn."
-},
+        content:
+        "Sự phát triển của công nghệ đang tạo ra nhiều thay đổi trong cuộc sống hiện đại. Internet, trí tuệ nhân tạo và các nền tảng số giúp con người tiếp cận thông tin nhanh hơn."
+    },
 
-{
-    title:
-    "Những xu hướng kinh tế đáng chú ý trong thời gian tới",
 
-    category:
-    "Kinh tế",
+    {
+        title:
+        "Những xu hướng kinh tế đáng chú ý trong thời gian tới",
 
-    image:
-    "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=900&q=80",
+        category:
+        "Kinh tế",
 
-    description:
-    "Nhiều lĩnh vực kinh tế đang thay đổi nhanh chóng dưới tác động của công nghệ.",
+        image:
+        "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=900&q=80",
 
-    content:
-    "Kinh tế số đang trở thành một trong những lĩnh vực được quan tâm. Doanh nghiệp ngày càng sử dụng dữ liệu và công nghệ để cải thiện hoạt động."
-},
+        description:
+        "Nhiều lĩnh vực kinh tế đang thay đổi nhanh chóng dưới tác động của công nghệ.",
 
-{
-    title:
-    "Các hoạt động thể thao thu hút sự quan tâm của giới trẻ",
+        content:
+        "Kinh tế số đang trở thành một trong những lĩnh vực được quan tâm. Doanh nghiệp ngày càng sử dụng dữ liệu và công nghệ để cải thiện hoạt động."
+    },
 
-    category:
-    "Thể thao",
 
-    image:
-    "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=900&q=80",
+    {
+        title:
+        "Các hoạt động thể thao thu hút sự quan tâm của giới trẻ",
 
-    description:
-    "Thể thao ngày càng trở thành một phần quan trọng trong đời sống của giới trẻ.",
+        category:
+        "Thể thao",
 
-    content:
-    "Các hoạt động thể thao giúp nâng cao sức khỏe và tạo cơ hội giao lưu. Nhiều môn thể thao đang được giới trẻ quan tâm và tham gia."
-},
+        image:
+        "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=900&q=80",
 
-{
-    title:
-    "Những thay đổi trong đời sống đô thị hiện đại",
+        description:
+        "Thể thao ngày càng trở thành một phần quan trọng trong đời sống của giới trẻ.",
 
-    category:
-    "Đời sống",
+        content:
+        "Các hoạt động thể thao giúp nâng cao sức khỏe và tạo cơ hội giao lưu. Nhiều môn thể thao đang được giới trẻ quan tâm và tham gia."
+    },
 
-    image:
-    "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=900&q=80",
 
-    description:
-    "Đô thị hiện đại đang thay đổi nhanh chóng cùng với sự phát triển của công nghệ.",
+    {
+        title:
+        "Những thay đổi trong đời sống đô thị hiện đại",
 
-    content:
-    "Các thành phố đang áp dụng nhiều giải pháp công nghệ nhằm cải thiện giao thông, môi trường và chất lượng cuộc sống của người dân."
-},
+        category:
+        "Đời sống",
 
-{
-    title:
-    "Nâng cao kỹ năng số cho sinh viên",
+        image:
+        "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=900&q=80",
 
-    category:
-    "Thời sự",
+        description:
+        "Đô thị hiện đại đang thay đổi nhanh chóng cùng với sự phát triển của công nghệ.",
 
-    image:
-    "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80",
+        content:
+        "Các thành phố đang áp dụng nhiều giải pháp công nghệ nhằm cải thiện giao thông, môi trường và chất lượng cuộc sống của người dân."
+    },
 
-    description:
-    "Kỹ năng số ngày càng trở thành một phần quan trọng trong quá trình học tập.",
 
-    content:
-    "Sinh viên có thể sử dụng nhiều công cụ kỹ thuật số để hỗ trợ học tập và nghiên cứu. Việc hiểu cách sử dụng công nghệ an toàn cũng rất quan trọng."
-},
+    {
+        title:
+        "Nâng cao kỹ năng số cho sinh viên",
 
-{
-    title:
-    "Trí tuệ nhân tạo mở ra nhiều hướng nghiên cứu mới",
+        category:
+        "Thời sự",
 
-    category:
-    "Công nghệ",
+        image:
+        "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80",
 
-    image:
-    "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80",
+        description:
+        "Kỹ năng số ngày càng trở thành một phần quan trọng trong quá trình học tập.",
 
-    description:
-    "AI đang được nghiên cứu và ứng dụng trong nhiều lĩnh vực.",
+        content:
+        "Sinh viên có thể sử dụng nhiều công cụ kỹ thuật số để hỗ trợ học tập và nghiên cứu. Việc hiểu cách sử dụng công nghệ an toàn cũng rất quan trọng."
+    },
 
-    content:
-    "Trí tuệ nhân tạo đang được ứng dụng trong giáo dục, y tế, sản xuất và nhiều lĩnh vực khác. Các công nghệ mới tiếp tục được nghiên cứu và phát triển."
-}
+
+    {
+        title:
+        "Trí tuệ nhân tạo mở ra nhiều hướng nghiên cứu mới",
+
+        category:
+        "Công nghệ",
+
+        image:
+        "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80",
+
+        description:
+        "AI đang được nghiên cứu và ứng dụng trong nhiều lĩnh vực.",
+
+        content:
+        "Trí tuệ nhân tạo đang được ứng dụng trong giáo dục, y tế, sản xuất và nhiều lĩnh vực khác. Các công nghệ mới tiếp tục được nghiên cứu và phát triển."
+    }
 
 ];
+
 
 
 /* ================= DISPLAY NEWS ================= */
 
 function displayNews(data) {
 
-const grid =
-document.getElementById("newsGrid");
+    const grid =
+        document.getElementById("newsGrid");
 
-grid.innerHTML = "";
+    grid.innerHTML = "";
 
 
-if(data.length === 0) {
+    if(data.length === 0) {
 
-grid.innerHTML =
-"<p>Không tìm thấy bài viết phù hợp.</p>";
+        grid.innerHTML =
+            "<p>Không tìm thấy bài viết phù hợp.</p>";
 
-return;
+        return;
+    }
+
+
+    data.forEach((article, index) => {
+
+        const div =
+            document.createElement("div");
+
+        div.className = "article";
+
+
+        div.onclick =
+            function() {
+
+                openArticle(index, data);
+
+            };
+
+
+        div.innerHTML = `
+
+            <img
+                src="${article.image}"
+                alt="${article.title}"
+            >
+
+            <div class="article-content">
+
+                <div class="category">
+                    ${article.category}
+                </div>
+
+                <h2>
+                    ${article.title}
+                </h2>
+
+                <p>
+                    ${article.description}
+                </p>
+
+            </div>
+
+        `;
+
+
+        grid.appendChild(div);
+
+    });
 
 }
 
-
-data.forEach((article, index) => {
-
-const div =
-document.createElement("div");
-
-div.className = "article";
-
-
-div.onclick =
-function() {
-
-openArticle(index, data);
-
-};
-
-
-div.innerHTML = `
-
-<img
-src="${article.image}"
-alt="${article.title}"
->
-
-<div class="article-content">
-
-<div class="category">
-${article.category}
-</div>
-
-<h2>
-${article.title}
-</h2>
-
-<p>
-${article.description}
-</p>
-
-</div>
-
-`;
-
-grid.appendChild(div);
-
-});
-
-}
 
 
 /* ================= OPEN ARTICLE ================= */
 
 function openArticle(index, data) {
 
-const article = data[index];
-
-document.getElementById("home")
-.style.display = "none";
-
-document.getElementById("detail")
-.style.display = "block";
+    const article =
+        data[index];
 
 
-document.getElementById("detailTitle")
-.innerText =
-article.title;
+    document.getElementById("home")
+        .style.display = "none";
 
 
-document.getElementById("detailMeta")
-.innerText =
-article.category +
-" | NEWS LAB";
+    document.getElementById("detail")
+        .style.display = "block";
 
 
-document.getElementById("detailImage")
-.src =
-article.image;
+    document.getElementById("detailTitle")
+        .innerText =
+        article.title;
 
 
-document.getElementById("detailText")
-.innerText =
-article.content;
+    document.getElementById("detailMeta")
+        .innerText =
+        article.category +
+        " | THANH NIÊN LAB";
+
+
+    document.getElementById("detailImage")
+        .src =
+        article.image;
+
+
+    document.getElementById("detailText")
+        .innerText =
+        article.content;
 
 }
+
 
 
 /* ================= HOME ================= */
 
 function showHome() {
 
-document.getElementById("home")
-.style.display = "block";
+    document.getElementById("home")
+        .style.display = "block";
 
-document.getElementById("detail")
-.style.display = "none";
+
+    document.getElementById("detail")
+        .style.display = "none";
 
 }
+
 
 
 /* ================= CATEGORY ================= */
 
 function filterNews(category) {
 
-const result =
-news.filter(
-article =>
-article.category === category
-);
+    const result =
+        news.filter(
+            article =>
+            article.category === category
+        );
 
-showHome();
 
-displayNews(result);
+    showHome();
+
+    displayNews(result);
 
 }
+
 
 
 /* ================= SEARCH ================= */
 
 function searchNews() {
 
-const keyword =
-document.getElementById("searchInput")
-.value
-.toLowerCase()
-.trim();
+    const keyword =
+        document.getElementById("searchInput")
+        .value
+        .toLowerCase()
+        .trim();
 
 
-if(keyword === "") {
+    if(keyword === "") {
 
-displayNews(news);
+        displayNews(news);
 
-return;
+        return;
+
+    }
+
+
+    const result =
+        news.filter(article =>
+
+            article.title
+                .toLowerCase()
+                .includes(keyword)
+
+            ||
+
+            article.description
+                .toLowerCase()
+                .includes(keyword)
+
+        );
+
+
+    showHome();
+
+    displayNews(result);
 
 }
 
 
-const result =
-news.filter(article =>
 
-article.title
-.toLowerCase()
-.includes(keyword)
+/* ================= ENTER SEARCH ================= */
 
-||
-article.description
-.toLowerCase()
-.includes(keyword)
+document
+    .getElementById("searchInput")
+    .addEventListener(
+        "keydown",
+        function(event) {
 
-);
+            if(event.key === "Enter") {
 
+                searchNews();
 
-displayNews(result);
+            }
 
-}
+        }
+    );
+
 
 
 /* ================= INITIAL ================= */
 
 displayNews(news);
 
+
 </script>
 
 </body>
+
 </html>
