@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>THANH NIÊN LAB - Tin tức mỗi ngày</title>
+<title>THANH NIÊN - Tin tức mỗi ngày</title>
 
 <style>
 
@@ -19,7 +19,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #f5f5f5;
+    background: #f4f4f4;
     color: #222;
 }
 
@@ -33,25 +33,31 @@ body {
 
 .header {
     max-width: 1200px;
+    height: 82px;
     margin: auto;
-    height: 80px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    padding: 0 10px;
 }
 
 .logo {
     font-size: 34px;
-    font-weight: bold;
+    font-weight: 700;
     letter-spacing: 1px;
 }
 
 .logo span {
-    font-size: 13px;
     display: block;
-    font-weight: normal;
+
     margin-top: 3px;
+
+    font-size: 12px;
+    font-weight: normal;
+
+    letter-spacing: 0.5px;
 }
 
 
@@ -62,8 +68,10 @@ body {
 }
 
 .search-box input {
-    width: 230px;
-    padding: 11px;
+    width: 250px;
+    height: 40px;
+
+    padding: 0 13px;
 
     border: none;
     outline: none;
@@ -72,19 +80,21 @@ body {
 }
 
 .search-box button {
-    padding: 11px 18px;
+    width: 55px;
+    height: 40px;
 
     border: none;
 
     background: #222;
     color: white;
 
-    cursor: pointer;
     font-weight: bold;
+
+    cursor: pointer;
 }
 
 .search-box button:hover {
-    background: #444;
+    background: #333;
 }
 
 
@@ -92,26 +102,31 @@ body {
 
 .menu {
     background: white;
+
     border-bottom: 1px solid #ddd;
 }
 
 .menu ul {
     max-width: 1200px;
+
     margin: auto;
+
+    display: flex;
 
     list-style: none;
 
-    display: flex;
     overflow-x: auto;
 }
 
 .menu li {
-    padding: 15px 18px;
+    padding: 16px 20px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    white-space: nowrap;
 
     cursor: pointer;
-
-    font-weight: bold;
-    white-space: nowrap;
 }
 
 .menu li:hover {
@@ -119,22 +134,24 @@ body {
 }
 
 
-/* ================= LAB NOTICE ================= */
+/* ================= NOTICE ================= */
 
 .warning {
     max-width: 1200px;
-    margin: 15px auto;
 
-    padding: 10px 12px;
+    margin: 8px auto;
 
-    background: #fff3cd;
-    border: 1px solid #ffe69c;
-
-    color: #664d03;
+    padding: 5px;
 
     text-align: center;
 
-    font-size: 14px;
+    color: #777;
+
+    font-size: 11px;
+
+    background: #fafafa;
+
+    border: 1px solid #eee;
 }
 
 
@@ -142,17 +159,23 @@ body {
 
 .container {
     max-width: 1200px;
+
     margin: auto;
+
+    padding: 0 10px;
 }
 
+
+/* ================= SECTION TITLE ================= */
+
 .section-title {
+    margin: 25px 0 16px;
+
+    padding-left: 12px;
+
     border-left: 5px solid #b40000;
 
-    padding-left: 10px;
-
-    margin: 25px 0 15px;
-
-    font-size: 24px;
+    font-size: 25px;
 }
 
 
@@ -161,18 +184,20 @@ body {
 .news-grid {
     display: grid;
 
-    grid-template-columns:
-        repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 20px;
 }
 
+
+/* ================= ARTICLE ================= */
+
 .article {
     background: white;
 
-    border-radius: 5px;
-
     overflow: hidden;
+
+    border-radius: 5px;
 
     box-shadow:
         0 2px 8px rgba(0,0,0,0.08);
@@ -186,8 +211,11 @@ body {
     transform: translateY(-3px);
 
     box-shadow:
-        0 5px 15px rgba(0,0,0,0.15);
+        0 5px 16px rgba(0,0,0,0.15);
 }
+
+
+/* ================= ARTICLE IMAGE ================= */
 
 .article img {
     width: 100%;
@@ -198,65 +226,71 @@ body {
     display: block;
 }
 
+
+/* ================= ARTICLE CONTENT ================= */
+
 .article-content {
-    padding: 15px;
+    padding: 16px;
 }
 
 .category {
+    margin-bottom: 8px;
+
     color: #b40000;
 
     font-size: 13px;
 
     font-weight: bold;
-
-    margin-bottom: 8px;
 }
 
 .article h2 {
+    margin-bottom: 9px;
+
     font-size: 20px;
 
-    line-height: 1.3;
-
-    margin-bottom: 8px;
+    line-height: 1.35;
 }
 
 .article p {
     color: #666;
 
-    line-height: 1.5;
+    font-size: 15px;
+
+    line-height: 1.55;
 }
 
 
-/* ================= ARTICLE DETAIL ================= */
+/* ================= DETAIL ================= */
 
 #detail {
     display: none;
 
-    background: white;
+    margin-top: 25px;
 
     padding: 30px;
 
-    margin-top: 25px;
+    background: white;
 }
 
 #detail h1 {
+    margin-bottom: 15px;
+
     font-size: 34px;
 
     line-height: 1.3;
-
-    margin-bottom: 15px;
 }
 
 .detail-meta {
+    margin-bottom: 20px;
+
     color: #777;
 
-    margin-bottom: 20px;
+    font-size: 14px;
 }
 
 #detail img {
     width: 100%;
-
-    max-height: 500px;
+    max-height: 520px;
 
     object-fit: cover;
 
@@ -280,9 +314,9 @@ body {
 
     color: white;
 
-    cursor: pointer;
-
     border-radius: 3px;
+
+    cursor: pointer;
 }
 
 .back-button:hover {
@@ -295,17 +329,19 @@ body {
 footer {
     margin-top: 50px;
 
+    padding: 28px;
+
     background: #222;
 
     color: white;
 
     text-align: center;
-
-    padding: 30px;
 }
 
 footer p {
     margin: 6px;
+
+    font-size: 14px;
 }
 
 
@@ -318,8 +354,7 @@ footer p {
     }
 
     .news-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
 }
@@ -379,7 +414,7 @@ footer p {
 
         <div class="logo">
 
-            THANH NIÊN LAB
+            THANH NIÊN
 
             <span>
                 TIN TỨC MỖI NGÀY
@@ -444,11 +479,11 @@ footer p {
 
 
 
-<!-- ================= LAB NOTICE ================= -->
+<!-- ================= SMALL NOTICE ================= -->
 
 <div class="warning">
 
-    ⚠️ <b>THANH NIÊN LAB — MÔ PHỎNG</b>
+    Sản phẩm mô phỏng phục vụ mục đích học tập.
 
 </div>
 
@@ -523,11 +558,11 @@ footer p {
 <footer>
 
     <p>
-        <b>THANH NIÊN LAB</b>
+        <b>THANH NIÊN</b>
     </p>
 
     <p>
-        Môi trường mô phỏng phục vụ thực hành web.
+        Sản phẩm mô phỏng phục vụ mục đích học tập.
     </p>
 
     <p>
@@ -749,7 +784,7 @@ function openArticle(index, data) {
     document.getElementById("detailMeta")
         .innerText =
         article.category +
-        " | THANH NIÊN LAB";
+        " | THANH NIÊN";
 
 
     document.getElementById("detailImage")
